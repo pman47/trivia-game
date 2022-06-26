@@ -23,18 +23,18 @@ function App() {
   }, []);
 
   const right = () =>
-    toast.success("Right Answer", {
+    toast.success("Correct !", {
       position: "top-center",
       autoClose: 1500,
-      hideProgressBar: true,
+      hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
-      draggable: false,
+      draggable: true,
       progress: undefined,
     });
 
   const wrong = () =>
-    toast.error("Wrong Answer", {
+    toast.error("Wrong Answer :(", {
       position: "top-center",
       autoClose: 1500,
       hideProgressBar: false,
@@ -63,7 +63,7 @@ function App() {
     }
   };
 
-  console.log(question);
+  // console.log(question);
 
   return (
     <div className="App">
@@ -74,11 +74,13 @@ function App() {
           <>
             <div id="category_score">
               <span id="category">Category : {question.category.title}</span>
-              <span id="score">Your Scores : {score}</span>
+              <span id="score">Your Score : {score}</span>
             </div>
             <div id="question_answer">
               <div id="question">{question.question}</div>
-              <div id="question_score">Score : {question.value}</div>
+              <div id="question_score">
+                Score : {question.value == null ? 0 : question.value}
+              </div>
               <form onSubmit={(event) => handleSubmit(event)}>
                 <label id="ans_container">
                   Answer :{" "}
