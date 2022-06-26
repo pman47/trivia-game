@@ -69,7 +69,7 @@ function App() {
     <div className="App">
       <div className="container">
         {question === null ? (
-          <div>Loading...</div>
+          <div id="loading">Loading...</div>
         ) : (
           <>
             <div id="category_score">
