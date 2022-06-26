@@ -49,8 +49,8 @@ function App() {
     let questionAns = question.answer.trim();
     questionAns = questionAns.replace(/<[^>]*>?/gm, ""); // removing tags from question answer like <i></i>
     if (
-      questionAns == ans ||
-      questionAns.toLowerCase() == ans.toLowerCase().trim()
+      questionAns === ans ||
+      questionAns.toLowerCase() === ans.toLowerCase().trim()
     ) {
       setAns("");
       setScore(Number(score) + Number(question.value));
